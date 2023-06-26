@@ -10,6 +10,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.messages.types.Background;
 
+import java.util.Map;
+
 public class LoginStepDefs {
     LoginPage loginPage = new LoginPage();
     @Given("user is on Docuport login page")
@@ -76,6 +78,17 @@ public class LoginStepDefs {
     }
 
 
+
+    @When("user enters credentials")
+    public void user_enters_credentials(Map<String ,String> credentials) {
+
+        for (Map.Entry <String,String> each: credentials.entrySet() ) {
+            System.out.println(each.getKey());
+           System.out.println(each.getValue());
+        }
+        loginPage.loginDocuport(credentials.get("username"),credentials.get("password"));
+
+    }
 }
 
 

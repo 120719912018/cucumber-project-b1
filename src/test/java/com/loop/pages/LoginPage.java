@@ -1,5 +1,6 @@
 package com.loop.pages;
 
+import com.loop.utilities.BrowerUtils;
 import com.loop.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,16 @@ public class LoginPage {
 
     @FindBy(xpath = "//span[.='Home']")
     public WebElement homeIcon;
+
+    public void loginDocuport(String username, String password){
+        BrowerUtils.waitForVisibility(loginInput, 5);
+        loginInput.clear();
+        loginInput.sendKeys(username);
+        passwordInput.sendKeys(password);
+        BrowerUtils.waitForClickable(loginButton,5);
+        BrowerUtils.clickWithJS(loginButton);
+
+    }
 
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(),this);
