@@ -49,12 +49,18 @@ public class Wikipedia_search_functionality {
     @Then("User sees {string} is in the {string}")
     public void user_sees_is_in_the(String name, String titleVer) {
 
-        Assert.assertEquals("expected doesn't match to actual"
-                ,"Steve Jobs - Wikipedia",Driver.getDriver().getTitle());
-        Assert.assertEquals("expected doesn't match to actual"
-                ,name,wikipediaSearchFunctionality.mainTitle.getText());
-        Assert.assertEquals("expected doesn't match to actual"
-                ,name,wikipediaSearchFunctionality.imageTitle.getText());
+        switch (titleVer) {
+            case "wiki title":
+                Assert.assertEquals("expected doesn't match to actual"
+                        ,"Steve Jobs - Wikipedia",Driver.getDriver().getTitle());
+            case "main header":
+                Assert.assertEquals("expected doesn't match to actual"
+                        ,name,wikipediaSearchFunctionality.mainTitle.getText());
+            case "image header":
+                Assert.assertEquals("expected doesn't match to actual"
+                        ,name,wikipediaSearchFunctionality.imageTitle.getText());
+        }
+
     }
 
 

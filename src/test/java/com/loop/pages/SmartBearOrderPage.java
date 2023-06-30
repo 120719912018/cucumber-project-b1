@@ -17,8 +17,11 @@ public class SmartBearOrderPage extends SmartBearBasePage{
     public WebElement product;
     @FindBy(id = "ctl00_MainContent_fmwOrder_txtQuantity")
     public WebElement quantity;
+
+
     @FindBy(xpath = "//input[@value='Calculate']")
-    public WebElement submitButton;
+    public WebElement calculateButton;
+
     @FindBy (id = "ctl00_MainContent_fmwOrder_txtName")
     public WebElement customerName;
 
@@ -44,6 +47,10 @@ public class SmartBearOrderPage extends SmartBearBasePage{
 
     @FindBy(xpath = "//a[.='Order']")
     public WebElement orderHeading;
+
+
+    @FindBy(xpath = "//td[.='Chuck Norris']")
+    public WebElement nameVerification;
 
 
 }

@@ -7,6 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class BrowerUtils {
 
@@ -123,4 +126,26 @@ public class BrowerUtils {
             cce.getMessage();
         }
     }
+
+    public static List<String> getElementsTest (List<WebElement> elements){
+        List<String> elementsText = new ArrayList<>();
+        for(WebElement element : elements){
+            elementsText.add(element.getText());
+        }
+        return elementsText;
+    }
+
+    public static List<String> getElementsTestWithStream (List<WebElement> elements){
+
+        return elements.stream()
+                .map(x->x.getText())
+                .collect(Collectors.toList());
+    }
+    public static List<String> getElementsTextWithStream2 (List<WebElement> elements){
+        return elements.stream()
+                .map(WebElement::getText)
+                .collect(Collectors.toList());
+    }
+
+
 }
