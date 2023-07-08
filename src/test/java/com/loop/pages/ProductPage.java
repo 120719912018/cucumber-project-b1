@@ -9,9 +9,11 @@ public class ProductPage {
     public ProductPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
     public void clickCategory(String category){
         Driver.getDriver().findElement(By.xpath("//a[.='"+category+"']")).click();
     }
+
 
     public String getProductPrice(String product){
         String actualPrice = Driver.getDriver()

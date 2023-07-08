@@ -28,6 +28,7 @@ import com.loop.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+//import  org.junit.Assert;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
@@ -51,6 +52,7 @@ public class Wikipedia_search_functionality {
 
         switch (titleVer) {
             case "wiki title":
+
                 Assert.assertEquals("expected doesn't match to actual"
                         ,"Steve Jobs - Wikipedia",Driver.getDriver().getTitle());
             case "main header":

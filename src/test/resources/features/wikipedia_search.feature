@@ -1,7 +1,7 @@
 
 
 Feature:
-  @kh
+@wiki
   Scenario Outline:  Wikipedia Search Functionality Title Verification
       Given  User is on Wikipedia home page
       When User types "<name>" in the wiki search box
