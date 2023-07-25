@@ -34,27 +34,31 @@ public class SmartBearStepDefs {
     @When("user enters quantity {int}")
     public void user_enters_quantity(Integer quantity) {
            orderPage.quantity.sendKeys(Keys.BACK_SPACE);
-           orderPage.quantity.sendKeys(toString());
+           orderPage.quantity.sendKeys(quantity.toString());
+    }
+    @When("user enters calculate button")
+    public void user_enters_calculate_button() {
+       orderPage.calculateButton.click();
     }
     @When("user enters customer name {string}")
     public void user_enters_customer_name(String customer_name) {
-
+        orderPage.customerName.sendKeys(customer_name);
     }
     @When("user enters street {string}")
     public void user_enters_street(String street) {
-
+        orderPage.street.sendKeys(street);
     }
     @When("user enters city {string}")
     public void user_enters_city(String city) {
-
+        orderPage.city.sendKeys(city);
     }
     @When("user enters state {string}")
     public void user_enters_state(String state) {
-
+         orderPage.state.sendKeys(state);
     }
     @When("user enters zip {string}")
     public void user_enters_zip(String zip) {
-
+         orderPage.zip.sendKeys(zip);
     }
     @When("user selects credit card type {string}")
     public void user_selects_credit_card_type(String card_type) {
@@ -65,19 +69,20 @@ public class SmartBearStepDefs {
     }
     @When("user enters credit car number {string}")
     public void user_enters_credit_car_number(String cardNumber) {
-
+         orderPage.cardNumber.sendKeys(cardNumber);
     }
     @When("user enters expiration date {string}")
     public void user_enters_expiration_date(String exp) {
-
+        orderPage.expiryDate.sendKeys(exp);
     }
     @When("user enters process order button")
     public void user_enters_process_order_button() {
-
+       orderPage.processButton.click();
     }
     @Then("user should see {string} in the first row of the table")
     public void user_should_see_in_the_first_row_of_the_table(String name) {
-
+       orderPage.viewAllOrders.click();
+       Assert.assertEquals("expected doesn't match actual ",name,orderPage.nameVerification.getText());
     }
 
 }

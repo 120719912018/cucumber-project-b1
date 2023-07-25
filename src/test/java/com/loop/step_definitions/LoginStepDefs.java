@@ -82,13 +82,18 @@ public class LoginStepDefs {
     @When("user enters credentials")
     public void user_enters_credentials(Map<String ,String> credentials) {
 
-        for (Map.Entry <String,String> each: credentials.entrySet() ) {
-            System.out.println(each.getKey());
-           System.out.println(each.getValue());
-        }
+//        for (Map.Entry <String,String> each: credentials.entrySet() ) {
+//            System.out.println(each.getKey());
+//           System.out.println(each.getValue());
+//        }
         loginPage.loginDocuport(credentials.get("username"),credentials.get("password"));
 
     }
+
+
+
+
+
 }
 
 

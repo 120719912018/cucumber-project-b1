@@ -1,5 +1,6 @@
 package com.loop.utilities;
 
+import com.loop.pages.DocuportLoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,5 +41,43 @@ public class DocuportUtils {
         WebElement logOut = driver.findElement(By.xpath("//span[contains(text(),'Log out')]"));
         logOut.click();
     }
+
+
+   //public static String  email="khoshgadam112@gmail.com";
+    public static void setCreatNewClient()  {
+
+        DocuportLoginPage docuportLoginPage= new DocuportLoginPage();
+        docuportLoginPage.client.click();
+        docuportLoginPage. new_client.click();
+        docuportLoginPage. personal.click();
+        docuportLoginPage.  newClientFirstName.sendKeys("Khoshgadam");
+        docuportLoginPage. newClientLastName.sendKeys("aliyeva");
+        docuportLoginPage. creatNewClientCheckBok.click();
+        docuportLoginPage. newClientEmailAddress.sendKeys( ConfigurationReader.getProperty("new.client.email"));
+        docuportLoginPage. advisorCheckBok.click();
+        docuportLoginPage. Group2.click();
+        docuportLoginPage. phoneNumber.sendKeys("6476437777");
+        docuportLoginPage. password.sendKeys("Khoshgadam888");
+        docuportLoginPage. confirmPassword.sendKeys("Khoshgadam888");
+        docuportLoginPage. saveButton.click();
+        docuportLoginPage. dateClick.click();
+        BrowerUtils.clickWithJS( docuportLoginPage.bbDate);
+        docuportLoginPage. phoneNumber.sendKeys("6476437777");
+        docuportLoginPage.advisor.click();
+        docuportLoginPage.Group2.click();
+        docuportLoginPage.service.click();
+        docuportLoginPage. selectService.click();
+        docuportLoginPage. addressLine1.sendKeys("2870 koshal");
+        docuportLoginPage. addressLine2.sendKeys("62 salterton");
+        docuportLoginPage. city.sendKeys("Edmonton");
+        docuportLoginPage. state.click();
+        docuportLoginPage. selectState.click();
+        docuportLoginPage. zipcode.sendKeys("12345");
+        docuportLoginPage. SaveFinish.click();
+        BrowerUtils.waitForVisibility( docuportLoginPage.successMsg,10);
+    }
+
+
+
 
 }
