@@ -1,11 +1,16 @@
 package com.loop.utilities;
 
 import io.cucumber.java.Scenario;
+import org.apache.commons.logging.Log;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +67,85 @@ public class BrowerUtils {
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
+
+//    public static void waitForPageToLoad(long timeOutInSeconds) {
+//        ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
+//            public Boolean apply(WebDriver driver) {
+//                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+//            }
+//        };
+//        try {
+//            LOG.info("Waiting for page to load...");
+//            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeOutInSeconds));
+//            wait.until(expectation);
+//        } catch (Throwable error) {
+//            LOG.info(
+//                    "Timeout waiting for Page Load Request to complete after " + timeOutInSeconds + " seconds");
+//        }
+//    }
+
+
+    public static void waitForStaleElement(WebElement element) {
+        int y = 0;
+        while (y <= 15) {
+            try {
+                element.isDisplayed();
+                break;
+            } catch (StaleElementReferenceException st) {
+                y++;
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } catch (WebDriverException we) {
+                y++;
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+//    public static void waitUntilPageLoad() {
+//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(Integer.valueOf(ConfigurationReader.getProperty("timeout"))));
+//        wait.until((d) -> {
+//            Boolean isPageLoaded = (Boolean) ((JavascriptExecutor) Driver.getDriver())
+//                    .executeScript("return document.readyState").equals("complete");
+//            if (!isPageLoaded)
+//                LOG.info("Document is loading");
+//            return isPageLoaded;
+//        });
+//    }
+
+
+//    public static void createFileWithContent(String filePath, String content) throws IOException {
+//        File file = new File(filePath);
+//
+//        try {
+//            file.createNewFile();
+//            FileWriter fw = new FileWriter(file);
+//            try {
+//                fw.write(content);
+//            } catch (Exception e) {
+//                Log.debug("Error during FileWriter append. " + e.getMessage(), e.getCause());
+//            } finally {
+//                try {
+//                    fw.close();
+//                } catch (Exception e) {
+//                    Log.debug("Error during FileWriter close. " + e.getMessage(), e.getCause());
+//                }
+//            }
+//
+//        } catch (IOException e) {
+//            Log.debug(e.getMessage(), e.getCause());
+//        }
+//    }
+
+
 
     /**
      * wait for providing element to be visible

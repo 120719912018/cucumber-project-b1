@@ -40,7 +40,8 @@ public class DocuportLoginStepDefs {
             Assert.assertEquals(loginPage.getLeftElement(leftItem.get("client")), leftItem.get("client"));
            // Assert.assertEquals("no match",loginPage.getLeftElement(leftItem.get("Client")),leftItem);
         case "b1g2_advisor@gmail.com":
-            Assert.assertEquals("no match",loginPage.getLeftElement(leftItem.get("Advisor")),leftItem.get("Advisor"));
+            Assert.assertEquals("no match",loginPage.getLeftElement(leftItem.get("Advisor")),
+                    leftItem.get("Advisor"));
         case "b1g2_supervisor@gmail.com":
             Assert.assertEquals("no match",loginPage.getLeftElement(leftItem.get("Supervisor")),leftItem.get("Supervisor"));
         case "b1g2_employee@gmail.com":

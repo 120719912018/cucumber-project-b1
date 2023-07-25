@@ -1,9 +1,28 @@
 package com.loop.pages;
 
-public class Interview {
+import java.util.HashMap;
+import java.util.Map;
+
+public  class Interview {
+
+
+
+    public Map<String, String> pairs(String[] strings) {
+
+        Map<String, String> map = new HashMap<>();
+
+        for (String each : strings){
+            map.put(each.charAt(1)+"",each.substring(each.length()-1));
+
+        }
+
+        return map;
+    }
 
 
     public static void main(String[] args) {
+
+
 
         String [] arr= {"one","two","three","four","five"};
         String reverse="";

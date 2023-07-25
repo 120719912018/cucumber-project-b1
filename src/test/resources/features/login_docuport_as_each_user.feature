@@ -12,24 +12,26 @@
 #2. download button is displayed
 #3. My Uploads is displayed
 
-  Feature: Login Docuport as each user validate buttons
+  Feature: Validate received document page in docuport
    @kha
     Scenario Outline:
              Login Docuport page as each user validation buttons
       Given  User login  home page each  "<username>" and "<password>"
-      When User click on  recieved documents
+      When User click on  recieved documents each "<username>"
       Then Validate search,download,Received  button is displayed
+        | Search       |
+        | Download     |
+        | Received docs|
       When User clicks on my upload button
       Then User validate search,download,MyUpload is displayed
+        | Search   |
+        | Download |
+        | My Upload|
 
-        | type   | uploadType|
-        | Search | Search    |
-        | Download | Download|
-        | Received docs | My Uploads|
 
       Examples:
         | username                  | password |
         | b1g2_advisor@gmail.com    | Group2   |
-       # | b1g2_client@gmail.com     | Group2   |
-       # | b1g2_supervisor@gmail.com | Group2   |
-       # | b1g2_employee@gmail.com   | Group2   |
+        | b1g2_client@gmail.com     | Group2   |
+        | b1g2_supervisor@gmail.com | Group2   |
+        | b1g2_employee@gmail.com   | Group2   |
