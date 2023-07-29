@@ -1,6 +1,6 @@
-24.07.2023 19:54:38 INFO  LoginAsAdvisorValidateRowNum:52 - User change row number to 5
-24.07.2023 19:54:38 INFO  LoginAsAdvisorValidateRowNum:38 - User click Users button
-24.07.2023 19:54:38 INFO  LoginAsAdvisorValidateRowNum:45 - Validated that rows per page shows by default 10
-24.07.2023 19:54:38 INFO  LoginAsAdvisorValidateRowNum:52 - User change row number to 5
-24.07.2023 19:54:38 INFO  LoginAsAdvisorValidateRowNum:57 - Validate that after changing it is showing 5
-24.07.2023 19:54:39 INFO  Hooks:40 - ...........END AUTOMATION.......LOOP ACADEMY.....
+25.07.2023 15:35:52 INFO  LoginAsAdvisorValidateRowNum:52 - User change row number to 5
+25.07.2023 15:35:52 INFO  LoginAsAdvisorValidateRowNum:38 - User click Users button
+25.07.2023 15:35:52 INFO  LoginAsAdvisorValidateRowNum:45 - Validated that rows per page shows by default 10
+25.07.2023 15:35:52 INFO  LoginAsAdvisorValidateRowNum:52 - User change row number to 5
+25.07.2023 15:35:52 INFO  LoginAsAdvisorValidateRowNum:57 - Validate that after changing it is showing 5
+25.07.2023 15:35:53 INFO  Hooks:40 - ...........END AUTOMATION.......LOOP ACADEMY.....

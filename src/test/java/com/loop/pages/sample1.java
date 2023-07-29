@@ -1,14 +1,11 @@
 package com.loop.pages;
 
-import com.loop.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.*;
 
-public class Interview2 {
+public class sample1 {
 
     public static void main(String[] args) {
         List<String> list = new ArrayList<>(Arrays.asList("nadir","apple","sdasd"));
@@ -58,9 +55,30 @@ public class Interview2 {
 //        list.add("feyruz");
 //        list.add("afcsd");
 //        list.add("wefs");
+        Map<Integer,String> map = new HashMap<>();
+        map.put(1,"apple");
+        map.put(2,"banana");
+        map.put(3,"grape");
+
+      map.forEach((id,name)->{
+          System.out.println(("lambda in map Id : "+ id +" " + "name: "+ name));
+          //System.out.println("Name: "+name);
+      });
 
         Collections.sort(list);
+        Map<Integer, String> tsmap=  Collections.checkedMap(map,Integer.class,String.class);
+        System.out.println("Checked map: " + tsmap);
+        Collections.checkedList(list,String.class);
         return list;
+
+    }
+
+
+
+    public static void test(){
+        WebDriver driver= new ChromeDriver();
+        driver.get("env");
+
 
     }
 
